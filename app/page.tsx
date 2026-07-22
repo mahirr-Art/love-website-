@@ -8,6 +8,7 @@ import PasswordScreen from '@/components/love/PasswordScreen';
 import AudioPlayer from '@/components/love/AudioPlayer';
 import LoveMap from '@/components/love/LoveMap';
 import CountdownTimer from '@/components/love/CountdownTimer';
+import MissYou from '@/components/love/MissYou';
 import TypewriterLetter from '@/components/love/TypewriterLetter';
 import Reasons100 from '@/components/love/Reasons100';
 import PhotoGallery from '@/components/love/PhotoGallery';
@@ -84,6 +85,11 @@ export default function LovePage() {
               {/* Countdown Timer */}
               <section id="love-countdown" className="px-4 md:px-8 lg:px-16">
                 <CountdownTimer />
+              </section>
+
+              {/* Miss You Longing Section */}
+              <section id="love-missyou" className="px-4 md:px-8 lg:px-16">
+                <MissYou />
               </section>
 
               {/* Love Letter */}
