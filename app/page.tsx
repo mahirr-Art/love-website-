@@ -1,65 +1,127 @@
-import Image from "next/image";
+'use client';
 
-export default function Home() {
+import { useState, useCallback } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import FloatingBackground from '@/components/love/FloatingBackground';
+import WelcomeScreen from '@/components/love/WelcomeScreen';
+import PasswordScreen from '@/components/love/PasswordScreen';
+import AudioPlayer from '@/components/love/AudioPlayer';
+import LoveMap from '@/components/love/LoveMap';
+import CountdownTimer from '@/components/love/CountdownTimer';
+import TypewriterLetter from '@/components/love/TypewriterLetter';
+import Reasons100 from '@/components/love/Reasons100';
+import PhotoGallery from '@/components/love/PhotoGallery';
+import WishStars from '@/components/love/WishStars';
+import SurpriseBox from '@/components/love/SurpriseBox';
+import FinalPage from '@/components/love/FinalPage';
+import Navbar from '@/components/love/Navbar';
+
+type AppStage = 'welcome' | 'password' | 'content';
+
+export default function LovePage() {
+  const [stage, setStage] = useState<AppStage>('welcome');
+  const [showAudio, setShowAudio] = useState(false);
+
+  const handleStart = useCallback(() => {
+    setStage('password');
+  }, []);
+
+  const handleUnlock = useCallback(() => {
+    setStage('content');
+    setShowAudio(true);
+  }, []);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div className="relative min-h-screen overflow-x-hidden" style={{ background: '#0a0c10' }}>
+      {/* Global floating background */}
+      <FloatingBackground />
+
+      <AnimatePresence mode="wait">
+        {/* Stage 1: Welcome Screen */}
+        {stage === 'welcome' && (
+          <motion.div
+            key="welcome"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            transition={{ duration: 0.6 }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            <WelcomeScreen onStart={handleStart} />
+          </motion.div>
+        )}
+
+        {/* Stage 2: Password Screen */}
+        {stage === 'password' && (
+          <motion.div
+            key="password"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            transition={{ duration: 0.6 }}
           >
-            Documentation
-          </a>
-        </div>
-      </main>
+            <PasswordScreen onUnlock={handleUnlock} />
+          </motion.div>
+        )}
+
+        {/* Stage 3: Main Content */}
+        {stage === 'content' && (
+          <motion.div
+            key="content"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+          >
+            {/* Navbar */}
+            <Navbar />
+
+            {/* All sections with smooth scroll targets */}
+            <div className="space-y-8 md:space-y-16">
+              {/* Love Map */}
+              <section id="love-map" className="px-4 md:px-8 lg:px-16 pt-8">
+                <LoveMap />
+              </section>
+
+              {/* Countdown Timer */}
+              <section id="love-countdown" className="px-4 md:px-8 lg:px-16">
+                <CountdownTimer />
+              </section>
+
+              {/* Love Letter */}
+              <section id="love-letter" className="px-4 md:px-8 lg:px-16">
+                <TypewriterLetter />
+              </section>
+
+              {/* 100 Reasons */}
+              <section id="love-reasons" className="px-4 md:px-8 lg:px-16">
+                <Reasons100 />
+              </section>
+
+              {/* Photo Gallery */}
+              <section id="love-gallery" className="px-4 md:px-8 lg:px-16">
+                <PhotoGallery />
+              </section>
+
+              {/* Wish Stars */}
+              <section id="love-stars" className="px-4 md:px-8 lg:px-16">
+                <WishStars />
+              </section>
+
+              {/* Surprise Box */}
+              <section id="love-surprise" className="px-4 md:px-8 lg:px-16">
+                <SurpriseBox />
+              </section>
+
+              {/* Final Page */}
+              <section id="love-final" className="px-4 md:px-8 lg:px-16 pb-16">
+                <FinalPage />
+              </section>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Audio Player - shows after unlock */}
+      {showAudio && <AudioPlayer />}
     </div>
   );
 }
