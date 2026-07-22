@@ -35,6 +35,35 @@ const AudioPlayer = forwardRef<AudioPlayerRef, {}>((props, ref) => {
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    const style = document.createElement('style');
+    style.innerHTML = `
+      @keyframes eq-bar-1 {
+        0%, 100% { height: 3px; }
+        50% { height: 14px; }
+      }
+      @keyframes eq-bar-2 {
+        0%, 100% { height: 6px; }
+        50% { height: 18px; }
+      }
+      @keyframes eq-bar-3 {
+        0%, 100% { height: 4px; }
+        50% { height: 11px; }
+      }
+      .eq-bar {
+        width: 3px;
+        background-color: #fef08a;
+        border-radius: 1px;
+        opacity: 0.8;
+      }
+      .eq-bar-1 { animation: eq-bar-1 0.8s ease-in-out infinite; }
+      .eq-bar-2 { animation: eq-bar-2 1.1s ease-in-out infinite; }
+      .eq-bar-3 { animation: eq-bar-3 0.9s ease-in-out infinite; }
+    `;
+    document.head.appendChild(style);
+    return () => { document.head.removeChild(style); };
+  }, []);
+
   useImperativeHandle(ref, () => ({
     play: () => {
       if (audioRef.current) {
@@ -182,25 +211,37 @@ const AudioPlayer = forwardRef<AudioPlayerRef, {}>((props, ref) => {
         onClick={() => setShowControls(!showControls)}
         className="w-14 h-14 rounded-full backdrop-blur-xl bg-white/10 border border-white/20 flex items-center justify-center text-white shadow-[0_8px_30px_rgb(0,0,0,0.3)] hover:bg-white/20 transition-colors z-10 relative group"
       >
-        <motion.div
-          animate={isPlaying ? { rotate: 360 } : { rotate: 0 }}
-          transition={{ repeat: Infinity, duration: 4, ease: 'linear' }}
-          className="relative"
-        >
-          <Music
-            size={24}
-            className={`transition-colors duration-300 ${
-              isPlaying ? 'text-[#fef08a]' : 'text-white/80 group-hover:text-white'
-            }`}
-          />
+        <div className="relative flex items-center justify-center">
+          <motion.div
+            animate={isPlaying ? { rotate: 360 } : { rotate: 0 }}
+            transition={{ repeat: Infinity, duration: 6, ease: 'linear' }}
+            className="flex items-center justify-center"
+          >
+            <Music
+              size={24}
+              className={`transition-colors duration-300 ${
+                isPlaying ? 'opacity-20' : 'text-white/80 group-hover:text-white'
+              }`}
+            />
+          </motion.div>
+
+          {/* Equalizer animation bars overlay */}
+          {isPlaying && (
+            <div className="flex gap-[3px] items-end h-[18px] absolute pointer-events-none z-20">
+              <span className="eq-bar eq-bar-1"></span>
+              <span className="eq-bar eq-bar-2"></span>
+              <span className="eq-bar eq-bar-3"></span>
+            </div>
+          )}
+
           {isPlaying && (
             <motion.div
-              animate={{ scale: [1, 1.4, 1], opacity: [0.5, 0, 0.5] }}
-              transition={{ repeat: Infinity, duration: 1.5 }}
-              className="absolute inset-0 rounded-full border-2 border-[#fef08a]/50"
+              animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0, 0.3] }}
+              transition={{ repeat: Infinity, duration: 2 }}
+              className="absolute inset-[-12px] rounded-full border border-[#fef08a]/40"
             />
           )}
-        </motion.div>
+        </div>
       </motion.button>
     </div>
   );

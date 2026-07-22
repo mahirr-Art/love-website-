@@ -9,7 +9,7 @@ interface WelcomeScreenProps {
 }
 
 export default function WelcomeScreen({ onStart }: WelcomeScreenProps) {
-  const titleText = "Sana küçük bir sürpriz hazırladım güzelliğine kurbaann olduğum ❤️";
+  const titleText = "Sana küçük bir sürpriz hazırladım ❤️";
   const titleWords = titleText.split(" ");
 
   return (
