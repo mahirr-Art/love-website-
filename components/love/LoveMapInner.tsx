@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useEffect, useState } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, Polyline, useMap } from 'react-leaflet';
@@ -17,7 +17,7 @@ L.Icon.Default.mergeOptions({
 const createHeartIcon = () => {
   return L.divIcon({
     className: 'custom-heart-marker',
-    html: `<div style="font-size: 24px; filter: drop-shadow(0 0 8px rgba(225, 29, 72, 0.8)); animation: pulse 2s infinite;">ÔØñ´©Å</div>`,
+    html: `<div style="font-size: 24px; filter: drop-shadow(0 0 8px rgba(225, 29, 72, 0.8)); animation: pulse 2s infinite;">❤️</div>`,
     iconSize: [24, 24],
     iconAnchor: [12, 12],
     popupAnchor: [0, -12],
@@ -99,13 +99,13 @@ export default function LoveMapInner() {
         
         <Marker position={loc1} icon={heartIcon}>
           <Popup className="custom-popup">
-            <div className="font-bold text-center">Sen ÔØñ´©Å</div>
+            <div className="font-bold text-center">Sen ❤️</div>
           </Popup>
         </Marker>
         
         <Marker position={loc2} icon={heartIcon}>
           <Popup className="custom-popup">
-            <div className="font-bold text-center">O ÔØñ´©Å</div>
+            <div className="font-bold text-center">O ❤️</div>
           </Popup>
         </Marker>
         

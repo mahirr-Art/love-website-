@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState, useRef, useEffect, forwardRef, useImperativeHandle } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -84,7 +84,7 @@ const AudioPlayer = forwardRef<AudioPlayerRef, {}>((props, ref) => {
                   transition={{ repeat: Infinity, duration: 8, ease: 'linear' }}
                   className="inline-block text-white font-medium text-sm drop-shadow-md"
                 >
-                  Bizim ┼Şark─▒m─▒z ­şÄÁ
+                  Bizim Şarkımız 🎵
                 </motion.div>
               </div>
               <button

@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -6,40 +6,40 @@ import { Star } from 'lucide-react';
 
 const wishMessages = [
   "Her gece seninle uyumak istiyorum",
-  "G├╝l├╝┼ş├╝n├╝ bir daha g├Ârmek i├ğin her ┼şeyi yapar─▒m",
-  "Seninle kahve i├ğmek d├╝nyan─▒n en g├╝zel ┼şeyi",
-  "Seni her g├Ârd├╝─ş├╝mde ilk g├╝nk├╝ gibi heyecanlan─▒yorum",
-  "Ellerini bir daha b─▒rakmak istemiyorum",
-  "Seninle ya┼şlanmak en b├╝y├╝k hayalim",
-  "G├Âzlerinin i├ğine bakarak kaybolmak istiyorum",
-  "Seni sevmek nefes almak kadar do─şal",
-  "Kalbim sadece senin ad─▒n─▒ s├Âyl├╝yor",
+  "Gülüşünü bir daha görmek için her şeyi yaparım",
+  "Seninle kahve içmek dünyanın en güzel şeyi",
+  "Seni her gördüğümde ilk günkü gibi heyecanlanıyorum",
+  "Ellerini bir daha bırakmak istemiyorum",
+  "Seninle yaşlanmak en büyük hayalim",
+  "Gözlerinin içine bakarak kaybolmak istiyorum",
+  "Seni sevmek nefes almak kadar doğal",
+  "Kalbim sadece senin adını söylüyor",
   "Seninle her yer cennet",
-  "Bir ├Âm├╝r yetmez seni sevmeye",
-  "D├╝nyada en ├ğok istedi─şim ┼şey senin mutlulu─şun",
-  "Her g├╝n├╝m├╝z ilk g├╝n├╝m├╝z gibi olsun",
-  "Seni d├╝┼ş├╝n├╝nce i├ğim k─▒p─▒r k─▒p─▒r oluyor",
-  "Seninle payla┼ş─▒lan her an mucize",
-  "Sen benim en g├╝zel ┼şans─▒ms─▒n",
-  "Kalbimin yar─▒s─▒ sende",
-  "Seni sevmek bu d├╝nyadaki en g├╝zel macera",
-  "Uyumadan ├Ânce son d├╝┼ş├╝ncem hep sen",
-  "Sabah g├Âzlerimi a├ğ─▒nca ilk akl─▒ma sen geliyorsun",
-  "Seninle ge├ğen her g├╝n bir hediye",
-  "Sana sar─▒lmak i├ğin yarat─▒lm─▒┼ş─▒m",
-  "Sen olmadan hi├ğbir ┼şeyin anlam─▒ yok",
-  "G├╝l├╝┼ş├╝n g├╝ne┼şten daha parlak",
-  "Seninle ayn─▒ g├Âky├╝z├╝ne bakmak bile g├╝zel",
-  "Kalbim seni se├ğti, sonsuza kadar",
-  "Her nefesimde sen vars─▒n",
-  "Seninle dans etmek istiyorum ay ─▒┼ş─▒─ş─▒nda",
-  "Sen benim kay─▒p par├ğamd─▒n",
-  "D├╝nyalar bir olsa seni yine se├ğerim",
-  "G├Âzlerin y─▒ld─▒zlardan g├╝zel",
+  "Bir ömür yetmez seni sevmeye",
+  "Dünyada en çok istediğim şey senin mutluluğun",
+  "Her günümüz ilk günümüz gibi olsun",
+  "Seni düşününce içim kıpır kıpır oluyor",
+  "Seninle paylaşılan her an mucize",
+  "Sen benim en güzel şansımsın",
+  "Kalbimin yarısı sende",
+  "Seni sevmek bu dünyadaki en güzel macera",
+  "Uyumadan önce son düşüncem hep sen",
+  "Sabah gözlerimi açınca ilk aklıma sen geliyorsun",
+  "Seninle geçen her gün bir hediye",
+  "Sana sarılmak için yaratılmışım",
+  "Sen olmadan hiçbir şeyin anlamı yok",
+  "Gülüşün güneşten daha parlak",
+  "Seninle aynı gökyüzüne bakmak bile güzel",
+  "Kalbim seni seçti, sonsuza kadar",
+  "Her nefesimde sen varsın",
+  "Seninle dans etmek istiyorum ay ışığında",
+  "Sen benim kayıp parçamdın",
+  "Dünyalar bir olsa seni yine seçerim",
+  "Gözlerin yıldızlardan güzel",
   "Sen benim evimsin",
   "Seninle her mevsim bahar",
-  "Kalbimin kap─▒s─▒n─▒ sadece sen a├ğabilirsin",
-  "Sen benim sonsuza kadar─▒ms─▒n"
+  "Kalbimin kapısını sadece sen açabilirsin",
+  "Sen benim sonsuza kadarımsın"
 ];
 
 interface StarData {
@@ -104,7 +104,7 @@ export default function WishStars() {
     <section className="py-16">
       <div className="flex items-center justify-center gap-3 mb-8">
         <Star className="w-8 h-8 text-gold-400 fill-yellow-200" />
-        <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">Dilek Y─▒ld─▒zlar─▒ Ô¡É</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">Dilek Yıldızları ⭐</h2>
       </div>
 
       <div 
@@ -195,7 +195,7 @@ export default function WishStars() {
 
       <div className="mt-6 text-center">
         <p className="text-rose-200/80 italic animate-pulse">
-          Ô£¿ Her y─▒ld─▒za dokun, sana bir dilek f─▒s─▒ldas─▒n... Ô£¿
+          ✨ Her yıldıza dokun, sana bir dilek fısıldasın... ✨
         </p>
       </div>
     </section>

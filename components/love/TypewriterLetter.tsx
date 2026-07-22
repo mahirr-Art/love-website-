@@ -1,20 +1,20 @@
-﻿"use client";
+"use client";
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Mail, Pause, Play, SkipForward, Heart } from "lucide-react";
 
-const LETTER_TEXT = `Can─▒m Benim,
+const LETTER_TEXT = `Canım Benim,
 
-Seni tan─▒d─▒─ş─▒m g├╝nden beri hayat─▒m─▒n en g├╝zel sayfalar─▒ yaz─▒lmaya ba┼şlad─▒. Seninle ge├ğen her an, kalbimde bir y─▒ld─▒z gibi parl─▒yor.
+Seni tanıdığım günden beri hayatımın en güzel sayfaları yazılmaya başladı. Seninle geçen her an, kalbimde bir yıldız gibi parlıyor.
 
-G├╝l├╝┼ş├╝n g├╝ne┼şim, bak─▒┼şlar─▒n huzurum, varl─▒─ş─▒n en b├╝y├╝k ┼şans─▒m. Seni sevmek, bu d├╝nyadaki en kolay ve en g├╝zel ┼şey.
+Gülüşün güneşim, bakışların huzurum, varlığın en büyük şansım. Seni sevmek, bu dünyadaki en kolay ve en güzel şey.
 
-Bazen kelimeler yetmiyor seni anlatmaya. Ama bil ki, her nefesimde sen vars─▒n. Her d├╝┼ş├╝ncemde sen vars─▒n. Her hayalimde sen vars─▒n.
+Bazen kelimeler yetmiyor seni anlatmaya. Ama bil ki, her nefesimde sen varsın. Her düşüncemde sen varsın. Her hayalimde sen varsın.
 
-Seninle uyumak istedi─şim daha milyonlarca gece, seninle g├╝lebilece─şim milyonlarca ┼şaka, seninle payla┼şabilece─şim milyonlarca an var.
+Seninle uyumak istediğim daha milyonlarca gece, seninle gülebileceğim milyonlarca şaka, seninle paylaşabileceğim milyonlarca an var.
 
-Bu mektubu okurken y├╝z├╝nde bir g├╝l├╝mseme beliriyorsa, i┼şte tam olarak bunu hissetmeni istiyordum.
+Bu mektubu okurken yüzünde bir gülümseme beliriyorsa, işte tam olarak bunu hissetmeni istiyordum.
 
 Sonsuza kadar seninle...`;
 
@@ -58,7 +58,7 @@ export default function TypewriterLetter() {
       <div className="max-w-3xl w-full mx-auto relative z-10">
         <div className="flex items-center justify-center gap-3 mb-10">
           <Mail className="text-rose-500 w-8 h-8" />
-          <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">Sana Mektubum ­şÆî</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">Sana Mektubum 💌</h2>
         </div>
 
         <div className="bg-gradient-to-br from-[#1a0a0a] to-[#0d0515] border border-rose-900/30 rounded-2xl p-8 md:p-12 shadow-[0_0_40px_rgba(225,29,72,0.1)] relative">
@@ -85,7 +85,7 @@ export default function TypewriterLetter() {
                   className="flex items-center gap-2 px-4 py-2 rounded-full bg-rose-500/20 hover:bg-rose-500/30 text-rose-200 transition-colors border border-rose-500/30"
                 >
                   <SkipForward size={18} />
-                  <span className="text-sm">T├╝m├╝n├╝ G├Âster</span>
+                  <span className="text-sm">Tümünü Göster</span>
                 </button>
               </>
             )}

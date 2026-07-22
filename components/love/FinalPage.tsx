@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useRef, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
@@ -81,7 +81,7 @@ export default function FinalPage() {
             transition={{ duration: 1, delay: 0.2 }}
             className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-yellow-200 via-amber-300 to-yellow-200 bg-clip-text text-transparent leading-tight max-w-3xl mx-auto"
           >
-            Seni bug├╝n d├╝nden, yar─▒n bug├╝nden daha ├ğok sevece─şim ÔØñ´©Å
+            Seni bugün dünden, yarın bugünden daha çok seveceğim ❤️
           </motion.h1>
 
           <motion.h2
@@ -91,7 +91,7 @@ export default function FinalPage() {
             transition={{ duration: 1, delay: 0.6 }}
             className="text-4xl md:text-5xl font-semibold text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.8)]"
           >
-            ─░yi ki vars─▒n.
+            İyi ki varsın.
           </motion.h2>
         </div>
 
@@ -123,10 +123,10 @@ export default function FinalPage() {
           className="mt-20 flex flex-col items-center gap-6"
         >
           <p className="text-xl text-rose-200/80 italic">
-            Bu sayfa seninle ba┼şlad─▒, seninle bitmeyecek... ­şÆò
+            Bu sayfa seninle başladı, seninle bitmeyecek... 💕
           </p>
           <p className="text-lg text-white/50">
-            Sonsuz sevgiyle, M. ÔØñ´©Å
+            Sonsuz sevgiyle, M. ❤️
           </p>
         </motion.div>
       </div>

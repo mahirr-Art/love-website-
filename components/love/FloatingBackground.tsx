@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useMemo, useEffect } from 'react';
 
@@ -82,7 +82,7 @@ export default function FloatingBackground() {
             animationDuration: heart.duration,
           }}
         >
-          ÔØñ´©Å
+          ❤️
         </div>
       ))}
     </div>

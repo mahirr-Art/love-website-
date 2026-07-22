@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -6,12 +6,12 @@ import { MapPin, Clock, Mail, Heart, Camera, Star, Gift, Infinity as InfinityIco
 
 const SECTIONS = [
   { id: 'love-map', name: 'Harita', icon: MapPin },
-  { id: 'love-countdown', name: 'Saya├ğ', icon: Clock },
+  { id: 'love-countdown', name: 'Sayaç', icon: Clock },
   { id: 'love-letter', name: 'Mektup', icon: Mail },
   { id: 'love-reasons', name: 'Sebepler', icon: Heart },
   { id: 'love-gallery', name: 'Galeri', icon: Camera },
-  { id: 'love-stars', name: 'Y─▒ld─▒zlar', icon: Star },
-  { id: 'love-surprise', name: 'S├╝rpriz', icon: Gift },
+  { id: 'love-stars', name: 'Yıldızlar', icon: Star },
+  { id: 'love-surprise', name: 'Sürpriz', icon: Gift },
   { id: 'love-final', name: 'Final', icon: InfinityIcon },
 ];
 

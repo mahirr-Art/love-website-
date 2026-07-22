@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -6,26 +6,26 @@ import { Heart } from "lucide-react";
 import confetti from "canvas-confetti";
 
 const REASONS = [
-  "G├╝l├╝┼ş├╝n kalbimi eritiyor", "Sar─▒lman d├╝nyan─▒n en g├╝zel hissi", "Her mesaj─▒n g├╝n├╝m├╝ ayd─▒nlat─▒yor", "G├Âzlerin beni b├╝y├╝l├╝yor", "Sesin kulaklar─▒mda m├╝zik gibi",
-  "Dokunu┼şun her ┼şeyi g├╝zelle┼ştiriyor", "Yan─▒ndayken zaman─▒n nas─▒l ge├ğti─şini anlam─▒yorum", "Kokuun beni sarho┼ş ediyor", "Benimle payla┼şt─▒─ş─▒n her an ├ğok de─şerli", "Seni d├╝┼ş├╝n├╝nce g├╝l├╝ms├╝yorum",
-  "Kalbim sadece senin i├ğin at─▒yor", "Hayallerimizin ortak olmas─▒", "Birlikte g├╝lmek her ┼şeye de─şer", "Sana her bakt─▒─ş─▒mda a┼ş─▒k oluyorum", "Ellerini tutmak huzur veriyor",
-  "Yan─▒nda olmak evde olmak gibi", "Sa├ğlar─▒n─▒ ok┼şamak en sevdi─şim ┼şey", "Birlikte uyumak d├╝nyan─▒n en g├╝zel hissi", "Sabah ilk seni d├╝┼ş├╝n├╝yorum", "Gece son d├╝┼ş├╝ncem sen oluyorsun",
-  "Beni oldu─şum gibi seviyorsun", "Her kavgam─▒z bizi g├╝├ğlendiriyor", "Birlikte yemek yapmak ├ğok e─şlenceli", "Film izlerken sar─▒lman", "Beni g├╝ld├╝ren esprilerin",
-  "Her zaman yan─▒mda olman", "K├Ât├╝ g├╝nlerimde beni teselli etmen", "Ba┼şar─▒lar─▒mla gurur duyman", "Bana inanman ve g├╝venmen", "K├╝├ğ├╝k s├╝rprizlerin",
-  "Birlikte m├╝zik dinlemek", "Seninle dans etmek", "Birlikte y├╝r├╝y├╝┼ş yapmak", "G├╝n bat─▒m─▒ izlemek seninle", "Birlikte hayal kurmak",
-  "Seninle seyahat planlar─▒ yapmak", "Birlikte kahve i├ğmek", "Bana ┼şark─▒ s├Âylemen", "Foto─şraflar─▒m─▒z", "Birlikte g├╝l├╝msedi─şimiz anlar",
-  "Seninle tart─▒┼ş─▒p bar─▒┼şmak", "─░lk bulu┼şmam─▒z─▒ hat─▒rlamak", "Seni g├Ârd├╝─ş├╝mde kalbimin h─▒zlanmas─▒", "Mesajla┼ş─▒rken saatlerin u├ğmas─▒", "Video aramalar─▒m─▒z",
-  "Birbirimize olan sadakatimiz", "Seni her g├╝n daha ├ğok sevmem", "Gelece─şimiz i├ğin birlikte ├ğal─▒┼şmam─▒z", "Birlikte b├╝y├╝memiz", "Her zorlu─şun ├╝stesinden gelmemiz",
-  "Sana sar─▒l─▒nca her ┼şeyin d├╝zelmesi", "G├╝l├╝┼ş├╝n├╝n bula┼ş─▒c─▒ olmas─▒", "Bana sab─▒rl─▒ olman", "Beni dinlemen", "Fikirlerime de─şer vermen",
-  "Her konuda d├╝r├╝st olman", "Bana g├╝ven vermen", "Sevgin ko┼şulsuz olmas─▒", "Bana ilham vermen", "Daha iyi biri olmam─▒ sa─şlaman",
-  "Seninle olan her an─▒n ├Âzel olmas─▒", "G├Âzlerindeki sevgiyi g├Ârmek", "Bana yazd─▒─ş─▒n mesajlar", "Birlikte ├ğay i├ğmek", "K─▒┼ş g├╝nlerinde battaniyeye sar─▒lmak",
-  "Birlikte ya─şmur izlemek", "Seninle sessizli─şin bile g├╝zel olmas─▒", "Birbirimizi tamamlamam─▒z", "Ayn─▒ ┼şeylere g├╝lmemiz", "Birbirimizin en iyi arkada┼ş─▒ olmam─▒z",
-  "Seni her g├Ârd├╝─ş├╝mde mutlu olmam", "Ayr─▒yken bile yak─▒n hissetmem", "Seninle payla┼ş─▒lan bir g├╝l├╝mseme", "Birlikte b├╝y├╝k hayaller kurmak", "K├╝├ğ├╝k anlara bile anlam katman",
-  "Her sabah g├╝nayd─▒n mesaj─▒n", "Her gece iyi geceler demen", "Seninle ├ğ─▒kt─▒─ş─▒m─▒z yolculuklar", "Beraber ke┼şfetti─şimiz yerler", "─░lk el ele tutu┼şmam─▒z",
-  "─░lk ├Âp├╝c├╝─ş├╝m├╝z", "Sana bakt─▒─ş─▒mda g├Ârd├╝─ş├╝m gelecek", "Birlikte ya┼şlanma hayalim", "Seninle kuraca─ş─▒m─▒z yuva", "Her g├╝n seni se├ğmem",
-  "Sen oldu─şun i├ğin", "Kalbimin tek sahibi olman", "Bana verdi─şin huzur", "Seninle ge├ğen her saniye", "G├╝l├╝┼ş├╝n├╝n sesini duymak",
-  "Birlikte a─şlamak bile g├╝zel", "Beni en ├ğok sen anl─▒yorsun", "Hayat─▒m─▒n anlam─▒ olman", "Seni sevmenin kolay olmas─▒", "Her bak─▒┼ş─▒nda eriyorum",
-  "R├╝yalar─▒ma girmen", "Seninle olan gelecek planlar─▒m─▒z", "Beni tamamlaman", "Her ┼şeye ra─şmen birbirimizi se├ğmemiz", "Sen, sadece sen oldu─şun i├ğin seni seviyorum ÔØñ´©Å"
+  "Gülüşün kalbimi eritiyor", "Sarılman dünyanın en güzel hissi", "Her mesajın günümü aydınlatıyor", "Gözlerin beni büyülüyor", "Sesin kulaklarımda müzik gibi",
+  "Dokunuşun her şeyi güzelleştiriyor", "Yanındayken zamanın nasıl geçtiğini anlamıyorum", "Kokuun beni sarhoş ediyor", "Benimle paylaştığın her an çok değerli", "Seni düşününce gülümsüyorum",
+  "Kalbim sadece senin için atıyor", "Hayallerimizin ortak olması", "Birlikte gülmek her şeye değer", "Sana her baktığımda aşık oluyorum", "Ellerini tutmak huzur veriyor",
+  "Yanında olmak evde olmak gibi", "Saçlarını okşamak en sevdiğim şey", "Birlikte uyumak dünyanın en güzel hissi", "Sabah ilk seni düşünüyorum", "Gece son düşüncem sen oluyorsun",
+  "Beni olduğum gibi seviyorsun", "Her kavgamız bizi güçlendiriyor", "Birlikte yemek yapmak çok eğlenceli", "Film izlerken sarılman", "Beni güldüren esprilerin",
+  "Her zaman yanımda olman", "Kötü günlerimde beni teselli etmen", "Başarılarımla gurur duyman", "Bana inanman ve güvenmen", "Küçük sürprizlerin",
+  "Birlikte müzik dinlemek", "Seninle dans etmek", "Birlikte yürüyüş yapmak", "Gün batımı izlemek seninle", "Birlikte hayal kurmak",
+  "Seninle seyahat planları yapmak", "Birlikte kahve içmek", "Bana şarkı söylemen", "Fotoğraflarımız", "Birlikte gülümsediğimiz anlar",
+  "Seninle tartışıp barışmak", "İlk buluşmamızı hatırlamak", "Seni gördüğümde kalbimin hızlanması", "Mesajlaşırken saatlerin uçması", "Video aramalarımız",
+  "Birbirimize olan sadakatimiz", "Seni her gün daha çok sevmem", "Geleceğimiz için birlikte çalışmamız", "Birlikte büyümemiz", "Her zorluğun üstesinden gelmemiz",
+  "Sana sarılınca her şeyin düzelmesi", "Gülüşünün bulaşıcı olması", "Bana sabırlı olman", "Beni dinlemen", "Fikirlerime değer vermen",
+  "Her konuda dürüst olman", "Bana güven vermen", "Sevgin koşulsuz olması", "Bana ilham vermen", "Daha iyi biri olmamı sağlaman",
+  "Seninle olan her anın özel olması", "Gözlerindeki sevgiyi görmek", "Bana yazdığın mesajlar", "Birlikte çay içmek", "Kış günlerinde battaniyeye sarılmak",
+  "Birlikte yağmur izlemek", "Seninle sessizliğin bile güzel olması", "Birbirimizi tamamlamamız", "Aynı şeylere gülmemiz", "Birbirimizin en iyi arkadaşı olmamız",
+  "Seni her gördüğümde mutlu olmam", "Ayrıyken bile yakın hissetmem", "Seninle paylaşılan bir gülümseme", "Birlikte büyük hayaller kurmak", "Küçük anlara bile anlam katman",
+  "Her sabah günaydın mesajın", "Her gece iyi geceler demen", "Seninle çıktığımız yolculuklar", "Beraber keşfettiğimiz yerler", "İlk el ele tutuşmamız",
+  "İlk öpücüğümüz", "Sana baktığımda gördüğüm gelecek", "Birlikte yaşlanma hayalim", "Seninle kuracağımız yuva", "Her gün seni seçmem",
+  "Sen olduğun için", "Kalbimin tek sahibi olman", "Bana verdiğin huzur", "Seninle geçen her saniye", "Gülüşünün sesini duymak",
+  "Birlikte ağlamak bile güzel", "Beni en çok sen anlıyorsun", "Hayatımın anlamı olman", "Seni sevmenin kolay olması", "Her bakışında eriyorum",
+  "Rüyalarıma girmen", "Seninle olan gelecek planlarımız", "Beni tamamlaman", "Her şeye rağmen birbirimizi seçmemiz", "Sen, sadece sen olduğun için seni seviyorum ❤️"
 ];
 
 export default function Reasons100() {
@@ -62,17 +62,17 @@ export default function Reasons100() {
         <div className="text-center mb-12">
           <div className="flex items-center justify-center gap-3 mb-6">
             <Heart className="w-8 h-8" style={{ color: "#e11d48", fill: "#e11d48" }} />
-            <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight">Seni Sevmemin 100 Sebebi ÔØñ´©Å</h2>
+            <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight">Seni Sevmemin 100 Sebebi ❤️</h2>
           </div>
           
           <div className="max-w-md mx-auto bg-white/5 p-4 rounded-2xl border border-rose-900/30 backdrop-blur-sm">
             <div className="flex justify-between items-center mb-2">
-              <span className="text-rose-200 font-medium">{flippedCount} / 100 Sebep A├ğ─▒ld─▒</span>
+              <span className="text-rose-200 font-medium">{flippedCount} / 100 Sebep Açıldı</span>
               <button
                 onClick={revealAll}
                 className="text-xs px-3 py-1 bg-rose-500/20 hover:bg-rose-500/40 text-rose-100 rounded-full transition-colors border border-rose-500/30"
               >
-                T├╝m├╝n├╝ A├ğ
+                Tümünü Aç
               </button>
             </div>
             <div className="h-3 bg-black/50 rounded-full overflow-hidden">
@@ -149,8 +149,8 @@ export default function Reasons100() {
             >
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#fef08a] to-transparent" />
               <Heart className="w-16 h-16 mx-auto mb-6" style={{ color: "#e11d48", fill: "#e11d48" }} />
-              <h3 className="text-3xl md:text-5xl font-bold text-white mb-4">100 sebep bile yetmez seni sevmeye... ÔØñ´©Å</h3>
-              <p className="text-xl md:text-2xl text-rose-200 font-serif italic">Sen benim her ┼şeyimsin.</p>
+              <h3 className="text-3xl md:text-5xl font-bold text-white mb-4">100 sebep bile yetmez seni sevmeye... ❤️</h3>
+              <p className="text-xl md:text-2xl text-rose-200 font-serif italic">Sen benim her şeyimsin.</p>
               
               <button 
                 onClick={() => setShowCelebration(false)}

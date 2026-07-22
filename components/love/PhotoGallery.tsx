@@ -1,22 +1,22 @@
-﻿'use client';
+'use client';
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Camera, ChevronLeft, ChevronRight, X } from 'lucide-react';
 
 const galleryItems = [
-  { id: 1, emoji: 'ÔØñ´©Å', caption: '─░lk bulu┼şmam─▒z', gradient: 'from-rose-400 to-red-500' },
-  { id: 2, emoji: '­şî╣', caption: 'Bana ald─▒─ş─▒n ilk g├╝l', gradient: 'from-pink-400 to-rose-600' },
-  { id: 3, emoji: '­şÆæ', caption: 'O g├╝zel ak┼şam', gradient: 'from-fuchsia-400 to-purple-600' },
-  { id: 4, emoji: '­şîà', caption: 'Deniz kenar─▒ g├╝n bat─▒m─▒', gradient: 'from-orange-400 to-rose-500' },
-  { id: 5, emoji: 'Ôİò', caption: 'Kahve molas─▒', gradient: 'from-amber-400 to-orange-500' },
-  { id: 6, emoji: '­şÄ¡', caption: 'Beraber izledi─şimiz o oyun', gradient: 'from-indigo-400 to-cyan-400' },
-  { id: 7, emoji: '­şÅû´©Å', caption: '─░lk tatilimiz', gradient: 'from-cyan-400 to-blue-500' },
-  { id: 8, emoji: '­şîâ', caption: 'Gece y├╝r├╝y├╝┼ş├╝', gradient: 'from-blue-600 to-indigo-800' },
-  { id: 9, emoji: '­şÄä', caption: 'Y─▒lba┼ş─▒ gecesi', gradient: 'from-emerald-400 to-teal-500' },
-  { id: 10, emoji: '­şÄé', caption: 'Do─şum g├╝n├╝n', gradient: 'from-yellow-400 to-amber-500' },
-  { id: 11, emoji: '­şÆÉ', caption: 'S├╝rpriz ├ği├ğekler', gradient: 'from-violet-400 to-fuchsia-500' },
-  { id: 12, emoji: '­şî©', caption: 'Bahar y├╝r├╝y├╝┼ş├╝', gradient: 'from-pink-300 to-rose-400' },
+  { id: 1, emoji: '❤️', caption: 'İlk buluşmamız', gradient: 'from-rose-400 to-red-500' },
+  { id: 2, emoji: '🌹', caption: 'Bana aldığın ilk gül', gradient: 'from-pink-400 to-rose-600' },
+  { id: 3, emoji: '💑', caption: 'O güzel akşam', gradient: 'from-fuchsia-400 to-purple-600' },
+  { id: 4, emoji: '🌅', caption: 'Deniz kenarı gün batımı', gradient: 'from-orange-400 to-rose-500' },
+  { id: 5, emoji: '☕', caption: 'Kahve molası', gradient: 'from-amber-400 to-orange-500' },
+  { id: 6, emoji: '🎭', caption: 'Beraber izlediğimiz o oyun', gradient: 'from-indigo-400 to-cyan-400' },
+  { id: 7, emoji: '🏖️', caption: 'İlk tatilimiz', gradient: 'from-cyan-400 to-blue-500' },
+  { id: 8, emoji: '🌃', caption: 'Gece yürüyüşü', gradient: 'from-blue-600 to-indigo-800' },
+  { id: 9, emoji: '🎄', caption: 'Yılbaşı gecesi', gradient: 'from-emerald-400 to-teal-500' },
+  { id: 10, emoji: '🎂', caption: 'Doğum günün', gradient: 'from-yellow-400 to-amber-500' },
+  { id: 11, emoji: '💐', caption: 'Sürpriz çiçekler', gradient: 'from-violet-400 to-fuchsia-500' },
+  { id: 12, emoji: '🌸', caption: 'Bahar yürüyüşü', gradient: 'from-pink-300 to-rose-400' },
 ];
 
 export default function PhotoGallery() {
@@ -56,7 +56,7 @@ export default function PhotoGallery() {
     <section className="py-16 px-4 md:px-8 max-w-7xl mx-auto">
       <div className="flex items-center justify-center gap-3 mb-12">
         <Camera className="w-8 h-8 text-rose-500" />
-        <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">An─▒lar─▒m─▒z ­şô©</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">Anılarımız 📸</h2>
       </div>
 
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">

@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -9,7 +9,7 @@ interface WelcomeScreenProps {
 }
 
 export default function WelcomeScreen({ onStart }: WelcomeScreenProps) {
-  const titleText = "Sana k├╝├ğ├╝k bir s├╝rpriz haz─▒rlad─▒m ÔØñ´©Å";
+  const titleText = "Sana küçük bir sürpriz hazırladım ❤️";
   const titleWords = titleText.split(" ");
 
   return (
@@ -69,7 +69,7 @@ export default function WelcomeScreen({ onStart }: WelcomeScreenProps) {
             transition={{ delay: 1.2, duration: 0.8 }}
             className="text-lg md:text-xl text-rose-200/80 mb-12 font-medium"
           >
-            Bu sayfa sadece senin i├ğin...
+            Bu sayfa sadece senin için...
           </motion.p>
 
           <motion.button
@@ -86,7 +86,7 @@ export default function WelcomeScreen({ onStart }: WelcomeScreenProps) {
             <span className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"></span>
             
             <Sparkles size={24} className="group-hover:animate-spin-slow" />
-            <span>Ba┼şla</span>
+            <span>Başla</span>
           </motion.button>
         </div>
       </motion.div>

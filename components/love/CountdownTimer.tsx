@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -60,7 +60,7 @@ export default function CountdownTimer() {
   };
 
   const timeUnits = [
-    { label: 'G├╝n', value: timeLeft.days },
+    { label: 'Gün', value: timeLeft.days },
     { label: 'Saat', value: timeLeft.hours },
     { label: 'Dakika', value: timeLeft.minutes },
     { label: 'Saniye', value: timeLeft.seconds }
@@ -75,7 +75,7 @@ export default function CountdownTimer() {
           <Clock className="text-[#fb7185] w-6 h-6" />
         </div>
         <h2 className="text-2xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-white/70">
-          Kavu┼şma Sayac─▒ <span className="text-2xl inline-block">ÔÅ│</span>
+          Kavuşma Sayacı <span className="text-2xl inline-block">⏳</span>
         </h2>
       </div>
 
@@ -86,9 +86,9 @@ export default function CountdownTimer() {
           className="text-center py-10"
         >
           <h3 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#fb7185] to-[#e11d48] mb-4">
-            Kavu┼ştuk! ­şÄëÔØñ´©Å
+            Kavuştuk! 🎉❤️
           </h3>
-          <p className="text-xl text-white/70">Art─▒k mesafeler bitti.</p>
+          <p className="text-xl text-white/70">Artık mesafeler bitti.</p>
         </motion.div>
       ) : (
         <>
@@ -125,8 +125,8 @@ export default function CountdownTimer() {
           
           <div className="text-center">
             <p className="text-lg md:text-xl font-medium text-white/80 flex items-center justify-center gap-2">
-              Sana sar─▒lmama kalan s├╝re 
-              <span className="text-[#e11d48] animate-pulse">ÔØñ´©Å</span>
+              Sana sarılmama kalan süre 
+              <span className="text-[#e11d48] animate-pulse">❤️</span>
             </p>
           </div>
         </>

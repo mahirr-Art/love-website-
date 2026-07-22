@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -43,7 +43,7 @@ export default function SurpriseBox() {
       >
         <div className="flex items-center justify-center gap-3 mb-4">
           <Gift className="w-8 h-8 text-rose-500" />
-          <h2 className="text-3xl md:text-5xl font-bold text-white">S├╝rpriz Kutusu ­şÄü</h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-white">Sürpriz Kutusu 🎁</h2>
           <Gift className="w-8 h-8 text-rose-500" />
         </div>
       </motion.div>
@@ -119,10 +119,10 @@ export default function SurpriseBox() {
                 className="absolute top-0 left-1/2 -translate-x-1/2 w-64 p-6 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl shadow-[0_0_40px_rgba(225,29,72,0.6)] z-30 flex flex-col items-center text-center gap-4"
               >
                 <div className="text-xl font-bold text-white">
-                  Sen benim en g├╝zel s├╝rprizimsin ÔØñ´©Å
+                  Sen benim en güzel sürprizimsin ❤️
                 </div>
                 <p className="text-rose-100/90 text-sm">
-                  Seni seviyorum, bug├╝n, yar─▒n, sonsuza kadar.
+                  Seni seviyorum, bugün, yarın, sonsuza kadar.
                 </p>
               </motion.div>
             )}
@@ -160,7 +160,7 @@ export default function SurpriseBox() {
               <motion.div animate={{ y: [0, -5, 0] }} transition={{ repeat: Infinity, duration: 1.5 }}>
                 <ArrowUp className="w-5 h-5" />
               </motion.div>
-              <span className="text-sm tracking-widest font-semibold">Hediyeni a├ğ!</span>
+              <span className="text-sm tracking-widest font-semibold">Hediyeni aç!</span>
             </motion.div>
           )}
         </AnimatePresence>

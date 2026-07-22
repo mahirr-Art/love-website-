@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -17,7 +17,7 @@ export default function PasswordScreen({ onUnlock }: PasswordScreenProps) {
     if (e) e.preventDefault();
     if (status === 'success') return;
 
-    const validPasswords = ['2508', '25.08', '25082023', '25.08.2023'];
+    const validPasswords = ['2701', '27.01', '27012026', '27.01.2026'];
 
     if (validPasswords.includes(password)) {
       setStatus('success');
@@ -73,10 +73,10 @@ export default function PasswordScreen({ onUnlock }: PasswordScreenProps) {
 
           <div className="space-y-3">
             <h2 className="text-3xl font-bold text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.3)] tracking-tight">
-              ┼Şifreyi Gir ­şöÆ
+              Şifreyi Gir 🔒
             </h2>
             <p className="text-white/70 font-medium">
-              Tan─▒┼şma tarihimizi hat─▒rl─▒yor musun?
+              Tanışma tarihimizi hatırlıyor musun?
             </p>
           </div>
 
@@ -110,7 +110,7 @@ export default function PasswordScreen({ onUnlock }: PasswordScreenProps) {
                     exit={{ opacity: 0, y: 10 }}
                     className="text-red-400 text-sm font-medium"
                   >
-                    Hmm, bu de─şildi... Tekrar dene ÔØñ´©Å
+                    Hmm, bu değildi... Tekrar dene ❤️
                   </motion.p>
                 )}
                 {status === 'success' && (
@@ -121,7 +121,7 @@ export default function PasswordScreen({ onUnlock }: PasswordScreenProps) {
                     exit={{ opacity: 0, y: 10 }}
                     className="text-green-400 text-sm font-medium"
                   >
-                    Ho┼ş geldin a┼şk─▒m ÔØñ´©Å
+                    Hoş geldin aşkım ❤️
                   </motion.p>
                 )}
               </AnimatePresence>
@@ -132,7 +132,7 @@ export default function PasswordScreen({ onUnlock }: PasswordScreenProps) {
               disabled={status === 'success' || !password}
               className="w-full bg-gradient-to-r from-[#e11d48] to-[#fb7185] hover:from-[#be123c] hover:to-[#e11d48] text-white font-semibold py-4 px-4 rounded-xl flex items-center justify-center gap-2 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed group shadow-[0_0_20px_rgba(225,29,72,0.3)] active:scale-[0.98]"
             >
-              <span className="tracking-wide">Giri┼ş Yap</span>
+              <span className="tracking-wide">Giriş Yap</span>
               <Heart className="w-5 h-5 group-hover:scale-125 transition-transform duration-300" />
             </button>
           </div>
