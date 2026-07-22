@@ -2,7 +2,11 @@
 
 import React, { useMemo, useEffect } from 'react';
 
-export default function FloatingBackground() {
+interface FloatingBackgroundProps {
+  showStrawberries?: boolean;
+}
+
+export default function FloatingBackground({ showStrawberries = false }: FloatingBackgroundProps) {
   useEffect(() => {
     const style = document.createElement('style');
     style.innerHTML = `
@@ -38,6 +42,18 @@ export default function FloatingBackground() {
       opacity: Math.random() * 0.3 + 0.1,
       delay: `${Math.random() * 10}s`,
       duration: `${Math.random() * 10 + 15}s`
+    }));
+  }, []);
+
+  const strawberries = useMemo(() => {
+    return Array.from({ length: 12 }).map((_, i) => ({
+      id: i,
+      left: `${Math.random() * 100}%`,
+      bottom: `-${Math.random() * 20 + 10}%`,
+      size: `${Math.random() * 24 + 16}px`,
+      opacity: Math.random() * 0.35 + 0.15,
+      delay: `${Math.random() * 10}s`,
+      duration: `${Math.random() * 12 + 12}s`
     }));
   }, []);
 
@@ -83,6 +99,27 @@ export default function FloatingBackground() {
           }}
         >
           ❤️
+        </div>
+      ))}
+
+      {/* Strawberries */}
+      {showStrawberries && strawberries.map((straw) => (
+        <div
+          key={`straw-${straw.id}`}
+          className="absolute select-none"
+          style={{
+            left: straw.left,
+            bottom: straw.bottom,
+            fontSize: straw.size,
+            opacity: straw.opacity,
+            animationName: 'love-float',
+            animationTimingFunction: 'linear',
+            animationIterationCount: 'infinite',
+            animationDelay: straw.delay,
+            animationDuration: straw.duration,
+          }}
+        >
+          🍓
         </div>
       ))}
     </div>
