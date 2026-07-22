@@ -76,7 +76,7 @@ export default function PasswordScreen({ onUnlock }: PasswordScreenProps) {
               Şifreyi Gir 🔒
             </h2>
             <p className="text-white/70 font-medium">
-              Tanışma tarihimizi hatırlıyor musun?
+              Tanışma tarihimizi hatırlıyor musun bebeğimm?
             </p>
           </div>
 
@@ -121,7 +121,7 @@ export default function PasswordScreen({ onUnlock }: PasswordScreenProps) {
                     exit={{ opacity: 0, y: 10 }}
                     className="text-green-400 text-sm font-medium"
                   >
-                    Hoş geldin aşkım ❤️
+                    Hoş geldin pıttık bebik ❤️
                   </motion.p>
                 )}
               </AnimatePresence>

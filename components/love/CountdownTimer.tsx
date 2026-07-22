@@ -75,7 +75,7 @@ export default function CountdownTimer() {
           <Clock className="text-[#fb7185] w-6 h-6" />
         </div>
         <h2 className="text-2xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-white/70">
-          Kavuşma Sayacı <span className="text-2xl inline-block">⏳</span>
+          Kavuşma Sayacı <span className="text-2xl inline-block">⏳🍓❤️</span>
         </h2>
       </div>
 
@@ -126,7 +126,7 @@ export default function CountdownTimer() {
           <div className="text-center">
             <p className="text-lg md:text-xl font-medium text-white/80 flex items-center justify-center gap-2">
               Sana sarılmama kalan süre 
-              <span className="text-[#e11d48] animate-pulse">❤️</span>
+              <span className="text-[#e11d48] animate-pulse">❤️🍓❤️</span>
             </p>
           </div>
         </>

@@ -9,7 +9,7 @@ interface WelcomeScreenProps {
 }
 
 export default function WelcomeScreen({ onStart }: WelcomeScreenProps) {
-  const titleText = "Sana küçük bir sürpriz hazırladım ❤️";
+  const titleText = "Sana küçük bir sürpriz hazırladım güzelliğine kurbaann olduğum ❤️";
   const titleWords = titleText.split(" ");
 
   return (
@@ -43,8 +43,11 @@ export default function WelcomeScreen({ onStart }: WelcomeScreenProps) {
             <motion.div
               animate={{ scale: [1, 1.1, 1] }}
               transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+              className="relative"
             >
               <Heart size={64} fill="currentColor" strokeWidth={1.5} color="#fb7185" />
+              <span className="absolute -top-4 -left-6 text-3xl select-none">🍓</span>
+              <span className="absolute -bottom-4 -right-6 text-3xl select-none">🍓</span>
             </motion.div>
           </motion.div>
 

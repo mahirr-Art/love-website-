@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Mail, Pause, Play, SkipForward, Heart } from "lucide-react";
 
-const LETTER_TEXT = `Canım Benim,
+const LETTER_TEXT = `Canım Benim, Bebeğimm, Pıttık Bebiğim, Güzelliğine Kurbaan Olduğum... 🍓❤️
 
 Seni tanıdığım günden beri hayatımın en güzel sayfaları yazılmaya başladı. Seninle geçen her an, kalbimde bir yıldız gibi parlıyor.
 

@@ -124,6 +124,15 @@ export default function SurpriseBox() {
                 <p className="text-rose-100/90 text-sm">
                   Seni seviyorum, bugün, yarın, sonsuza kadar.
                 </p>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setIsOpen(false);
+                  }}
+                  className="mt-2 px-4 py-1.5 rounded-full bg-[#e11d48]/40 hover:bg-[#e11d48]/60 text-white text-xs font-semibold border border-rose-500/40 transition-colors"
+                >
+                  Kutuyu Kapat 🍓
+                </button>
               </motion.div>
             )}
           </AnimatePresence>

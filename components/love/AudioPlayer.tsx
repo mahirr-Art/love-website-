@@ -14,14 +14,38 @@ const AudioPlayer = forwardRef<AudioPlayerRef, {}>((props, ref) => {
   const [volume, setVolume] = useState(0.5);
   const [isLooping, setIsLooping] = useState(true);
   const [showControls, setShowControls] = useState(false);
+  const [showAutoplayHelper, setShowAutoplayHelper] = useState(false);
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  useEffect(() => {
+    // Try to auto-play after 1.5 seconds when main content loads
+    const timer = setTimeout(() => {
+      if (audioRef.current) {
+        audioRef.current.play()
+          .then(() => {
+            setIsPlaying(true);
+          })
+          .catch((err) => {
+            console.log('Autoplay blocked by browser policy:', err);
+            setShowAutoplayHelper(true);
+          });
+      }
+    }, 1500);
+    return () => clearTimeout(timer);
+  }, []);
 
   useImperativeHandle(ref, () => ({
     play: () => {
       if (audioRef.current) {
-        audioRef.current.play().catch((e) => console.log('Autoplay blocked', e));
-        setIsPlaying(true);
+        audioRef.current.play()
+          .then(() => {
+            setIsPlaying(true);
+          })
+          .catch((e) => {
+            console.log('Autoplay blocked', e);
+            setShowAutoplayHelper(true);
+          });
       }
     },
     pause: () => {
@@ -45,6 +69,7 @@ const AudioPlayer = forwardRef<AudioPlayerRef, {}>((props, ref) => {
         audioRef.current.pause();
       } else {
         audioRef.current.play().catch((e) => console.log('Playback failed', e));
+        setShowAutoplayHelper(false);
       }
       setIsPlaying(!isPlaying);
     }
@@ -131,6 +156,23 @@ const AudioPlayer = forwardRef<AudioPlayerRef, {}>((props, ref) => {
                 <Repeat size={18} />
               </button>
             </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {showAutoplayHelper && !isPlaying && (
+          <motion.div
+            initial={{ opacity: 0, y: 15, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 15, scale: 0.9 }}
+            className="absolute bottom-20 right-0 bg-[#e11d48] text-white p-4 rounded-2xl shadow-2xl w-64 border border-rose-400/40 text-xs font-semibold text-center select-none cursor-pointer z-50 hover:bg-[#be123c] transition-colors"
+            onClick={() => {
+              togglePlay();
+            }}
+          >
+            Ecem bebeğimm, eğer müzik otomatik başlamadıysa buraya dokunup başlatabilirsin! 🎵🍓❤️
+            <div className="absolute bottom-[-6px] right-6 w-3 h-3 bg-[#e11d48] transform rotate-45 border-r border-b border-rose-400/40"></div>
           </motion.div>
         )}
       </AnimatePresence>

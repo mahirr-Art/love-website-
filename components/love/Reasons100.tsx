@@ -25,7 +25,7 @@ const REASONS = [
   "İlk öpücüğümüz", "Sana baktığımda gördüğüm gelecek", "Birlikte yaşlanma hayalim", "Seninle kuracağımız yuva", "Her gün seni seçmem",
   "Sen olduğun için", "Kalbimin tek sahibi olman", "Bana verdiğin huzur", "Seninle geçen her saniye", "Gülüşünün sesini duymak",
   "Birlikte ağlamak bile güzel", "Beni en çok sen anlıyorsun", "Hayatımın anlamı olman", "Seni sevmenin kolay olması", "Her bakışında eriyorum",
-  "Rüyalarıma girmen", "Seninle olan gelecek planlarımız", "Beni tamamlaman", "Her şeye rağmen birbirimizi seçmemiz", "Sen, sadece sen olduğun için seni seviyorum ❤️"
+  "Rüyalarıma girmen", "Seninle olan gelecek planlarımız", "Beni tamamlaman", "Her şeye rağmen birbirimizi seçmemiz", "Sen, sadece sen olduğun için seni seviyorum bebeğimm, pıttık bebik, güzelliğine kurbaann olduğum! 🍓❤️"
 ];
 
 export default function Reasons100() {
