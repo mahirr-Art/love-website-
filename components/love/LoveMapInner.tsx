@@ -75,8 +75,8 @@ export default function LoveMapInner() {
 
   if (!mounted) return null;
 
-  const loc1: [number, number] = [42.0283, 35.1533]; // Sinop
-  const loc2: [number, number] = [41.0082, 28.9784]; // Istanbul
+  const loc1: [number, number] = [40.8438, 31.1565]; // Düzce
+  const loc2: [number, number] = [39.9056, 41.2769]; // Erzurum
   const positions = [loc1, loc2];
 
   const heartIcon = createHeartIcon();

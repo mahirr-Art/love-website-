@@ -84,7 +84,7 @@ const AudioPlayer = forwardRef<AudioPlayerRef, {}>((props, ref) => {
                   transition={{ repeat: Infinity, duration: 8, ease: 'linear' }}
                   className="inline-block text-white font-medium text-sm drop-shadow-md"
                 >
-                  Bizim Şarkımız 🎵
+                  Neden Bu Kadar Güzelsin - Skapova 🎵
                 </motion.div>
               </div>
               <button

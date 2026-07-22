@@ -10,7 +10,6 @@ import LoveMap from '@/components/love/LoveMap';
 import CountdownTimer from '@/components/love/CountdownTimer';
 import TypewriterLetter from '@/components/love/TypewriterLetter';
 import Reasons100 from '@/components/love/Reasons100';
-import PhotoGallery from '@/components/love/PhotoGallery';
 import WishStars from '@/components/love/WishStars';
 import SurpriseBox from '@/components/love/SurpriseBox';
 import FinalPage from '@/components/love/FinalPage';
@@ -96,10 +95,6 @@ export default function LovePage() {
                 <Reasons100 />
               </section>
 
-              {/* Photo Gallery */}
-              <section id="love-gallery" className="px-4 md:px-8 lg:px-16">
-                <PhotoGallery />
-              </section>
 
               {/* Wish Stars */}
               <section id="love-stars" className="px-4 md:px-8 lg:px-16">
