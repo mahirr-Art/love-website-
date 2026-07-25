@@ -2,11 +2,12 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MapPin, Clock, Mail, Heart, Camera, Star, Gift, Sparkles, Award, Infinity as InfinityIcon } from 'lucide-react';
+import { MapPin, Clock, Mail, Heart, Camera, Star, Gift, Sparkles, Award, FlaskConical, Infinity as InfinityIcon } from 'lucide-react';
 
 const SECTIONS = [
   { id: 'love-map', name: 'Harita', icon: MapPin },
   { id: 'love-anniversary', name: '6. Ayımız', icon: Award },
+  { id: 'love-potion', name: 'İksirimiz', icon: FlaskConical },
   { id: 'love-countdown', name: 'Sayaç', icon: Clock },
   { id: 'love-missyou', name: 'Özlemim', icon: Sparkles },
   { id: 'love-letter', name: 'Mektup', icon: Mail },
