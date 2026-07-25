@@ -9,6 +9,7 @@ import AudioPlayer from '@/components/love/AudioPlayer';
 import LoveMap from '@/components/love/LoveMap';
 import CountdownTimer from '@/components/love/CountdownTimer';
 import MissYou from '@/components/love/MissYou';
+import Anniversary6th from '@/components/love/Anniversary6th';
 import TypewriterLetter from '@/components/love/TypewriterLetter';
 import Reasons100 from '@/components/love/Reasons100';
 import PhotoGallery from '@/components/love/PhotoGallery';
@@ -80,6 +81,11 @@ export default function LovePage() {
               {/* Love Map */}
               <section id="love-map" className="px-4 md:px-8 lg:px-16 pt-8">
                 <LoveMap />
+              </section>
+
+              {/* 6th Month Anniversary Section */}
+              <section id="love-anniversary" className="px-4 md:px-8 lg:px-16">
+                <Anniversary6th />
               </section>
 
               {/* Countdown Timer */}
